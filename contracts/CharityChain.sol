@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 contract CharityChain {
   string public name;
-  uint public orgsCount = 0;
+  uint public orgsCount;
 
   mapping(uint => Organisation) public organisations;
 
@@ -31,8 +31,9 @@ contract CharityChain {
     bool reqSatisfied
   );
 
-  constructor() public {
+  constructor() {
     name = "Charity Chain";
+    orgsCount = 0;
   }
 
   function createOrganisation(string memory _name, uint _coins_wanted) public {
@@ -65,4 +66,15 @@ contract CharityChain {
       // Trigger the event
       emit OrganisationDonated(orgsCount, _org.name, _org.coins_wanted, payable(msg.sender), true);
   }
+
+  function getOrganisationDetails(uint _id) public view returns (uint, string memory, uint, address payable, bool) {
+    Organisation memory org = organisations[_id];
+    return (org.id, org.name, org.coins_wanted, org.addr_org, org.reqSatisfied);
+  }
+
+    function getCount() public view returns (uint) {
+    return orgsCount;
+  }
+
 }
+

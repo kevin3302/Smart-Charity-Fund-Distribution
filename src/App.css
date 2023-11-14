@@ -1,3 +1,7 @@
+.bg-image{
+  background: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+}
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -28,4 +32,21 @@ code {
 .orglist {
   padding-left: 25%;
   padding-right: 25%;
+}
+
+img {
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  border-radius: 50%; /* Create a circular shape for the image */
+  display: inline;
+}
+
+.logo-head{
+  font-family: 'Vina Sans', sans-serif;
+  font-size: xx-large !important;
+}
+
+.donatedbutton{
+  color:black;
+  float: right;
 }
